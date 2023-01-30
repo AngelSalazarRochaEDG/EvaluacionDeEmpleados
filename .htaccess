@@ -1,0 +1,5 @@
+## Reajustes de indice
+DirectoryIndex Vistas/evaluacionVista.php
+
+RewriteEngine On
+RewriteRule ^evaluacion$  Vistas/evaluacionVista.php
