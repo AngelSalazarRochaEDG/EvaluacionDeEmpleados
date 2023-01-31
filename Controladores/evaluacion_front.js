@@ -42,7 +42,8 @@ function Next()
         numPregunta++;
     }
     if (numPregunta == 21) {
-        document.querySelector("#Siguiente").disabled = true;
+        document.querySelector("#SiguienteBtn").disabled = true;
+        document.querySelector("#EnviarBtn").disabled = false;
     }
     
     document.querySelector("#Anterior").disabled = false;
@@ -59,7 +60,10 @@ function Previous() {
         document.querySelector("#Anterior").disabled = true;
     }
     
-    document.querySelector("#Siguiente").disabled = false;
+    if (numPregunta < 21) {
+        document.querySelector("#SiguienteBtn").disabled = false;
+        document.querySelector("#EnviarBtn").disabled = true;
+    }
     
     PrintQuestions();
 }
@@ -118,3 +122,7 @@ function ShowSelected()
     console.log(combo.selectedIndex);
 }
 
+function Enviar() {
+    var promedio1 = 0, promedio2 = 0, promedio3 = 0, promedio4 = 0, promedio5
+    
+}
