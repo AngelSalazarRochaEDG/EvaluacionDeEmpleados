@@ -68,8 +68,7 @@
             <div class="form-group col-sm-9 col-md-7 col-lg-5">
                 <h5>Cuestionario</h5>
                 Se calificara cada pregunta utilizando la escala numérica del 0 al 3.
-                Donde 0 es Muy insactisfactorio, 1 es Insactisfactorio, 2 es Sactisfactorio y
-                3 es Sobresaliente.
+                Donde 0 es Muy insactisfactorio, 1 es Insactisfactorio, 2 es Sactisfactorio y 3 es Sobresaliente.
                 El promedio dará como resultado una puntuación general de desempeño.
             </div>
         </div>

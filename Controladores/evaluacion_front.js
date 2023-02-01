@@ -32,11 +32,13 @@ var habilidades = [
 ];
 
 var respuestas = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var comentarios = ["","","","","","","","","","","","","","","","","","","","","",""];
 
 var numPregunta = 0;
 
 function Next() 
 {
+    console.log("aaaaaaaaaaaaa");
     SaveAnswer();
     if (numPregunta < 21) {
         numPregunta++;
