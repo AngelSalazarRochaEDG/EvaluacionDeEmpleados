@@ -44,12 +44,16 @@ create table if not exists Preguntas (
     CONSTRAINT `pk_inciso` primary key (Habilidad, Inciso)
 );
 
-/*
-CREATE TABLE `alumno` (
-    `Matricula` varchar(15) COLLATE latin1_bin NOT NULL,
-    `Id_Grupo` int(11) NOT NULL,
-    `Dia` varchar(15) COLLATE latin1_bin NOT NULL,
+create table if not exists users
+(
+    id_user int AUTO_INCREMENT,
+    email varchar(30) not null,
+    `password` varchar(100) not null,
+    ip_address varchar(20) not null,
+    created_at datetime not null,
+    updated_at datetime not null,
+    validated char(1),
+    first_name varchar(25),
 
-    CONSTRAINT `Id_Grupo_Fk` FOREIGN KEY (`Id_Grupo`,`Dia`) REFERENCES `detallehorario` (`Id_Grupo`,`Dia`) ON DELETE NO ACTION ON UPDATE NO ACTION
-)   ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
-*/
+    constraint `pk_user` primary key (id_user)
+);
