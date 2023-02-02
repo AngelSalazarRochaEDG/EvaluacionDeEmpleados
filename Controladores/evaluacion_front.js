@@ -38,7 +38,7 @@ var numPregunta = 0;
 
 function Next() 
 {
-    console.log("aaaaaaaaaaaaa");
+    // console.log("");
     SaveAnswer();
     if (numPregunta < 21) {
         numPregunta++;

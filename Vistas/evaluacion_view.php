@@ -1,34 +1,18 @@
-<?php
-    include '../Modelos/evaluacion_model.php';
-?>
-
+<!-- Vista de evaluacion de empleados -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evaluación de empleados</title>
+    <title>Evaluacion de empleados</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/evaluacionDesign.css">
+    <link rel="stylesheet" href="./css/home_stiles.css?02022023">
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
-    <script tipe="text/javascript" src="./Controladores/evaluacion_front.js"></script>
+    <script tipe="text/javascript" src="./Controladores/evaluacion_front.js?02022023"></script>
 </head>
-<body role="document" class>
-    <div id="main-app" class="main-wrapper">
-        <nav class="navbar navbar-light bg-light">
-            <a href="#" class="col-md-3 text-reset text-uppercase d-flex align-items-center">
-                <img src="./resources/EDGroupLogo.png" alt="Logo EDGroup" class="img-logo mr-2 img-fluid" width="60px">
-                <a class="navbar-brand">ED Group</a>
-            </a>
-            <form class="form-inline">
-                <input class="form-control mr-sm-3" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </nav>
-    </div>
-
-    <div class="container" >
+<body>
+    <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-10 col-lg-12">
                 <br>
@@ -105,49 +89,5 @@
             </div>
         </form>
     </div>
-
-    <!-- Footer -->
-    <br>
-    <footer class="bg-dark text-white py-4">
-        <div class="container">
-            <nav class="row">
-
-                <!-- Footer -->
-                <a href="#" class="col-3 text-reset text-uppercase d-flex align-items-center">
-                    <img src="./resources/EDGroupLogo.png" alt="Logo EDGroup" class="img-logo mr-2 img-fluid" width="60px">
-                    ED Group
-                </a>
-
-                <!-- menu  -->
-                <ul class="col-3 list-unstyled">
-                    <li class="font-weight-blod text-uppercase">Principal</li>
-                    <!--edgroup univeristy... -->
-                    <li class="d-flex justify-content-between" ><a href="#" class="text-reset text-white">Link 1</a></li>
-                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 2</a></li>
-                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 3</a></li>
-                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 4</a></li>
-                </ul>
-
-                <!-- cursos -->
-                <ul class="col-3 list-unstyled">
-                    <li class="font-weight-blod text-uppercase">Redes sociales</li>
-                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 1</a></li>
-                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 2</a></li>
-                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 3</a></li>
-                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 4</a></li>
-                </ul>
-                
-                <!-- social networks -->
-                <ul class="col-3 list-unstyled">
-                    <li class="font-weight-blod text-uppercase">Ayuda</li>
-                    <!-- soporte, contactos, ubicación... -->
-                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 1</a></li>
-                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 2</a></li>
-                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 3</a></li>
-                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 4</a></li>
-                </ul>
-            </nav>
-        </div>
-    </footer>
 </body>
 </html>
