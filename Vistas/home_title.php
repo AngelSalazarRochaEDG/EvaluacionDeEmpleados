@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evaluación de empleados</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/home_stiles.css?02022023">
+    <link rel="stylesheet" href="./css/home_stiles.css?1">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script tipe="text/javascript" src="./Controladores/title_controller.js?02022023"></script>
     
@@ -40,37 +40,35 @@
         </nav>
     </div>
 
-    <!-- <header>
-        <div class="icon__menu">
-            <i class="fas fa-bars" id="btn_open"></i>
-        </div>
-    </header> -->
-
+    
+    <!-- Titulo de menu principal -->
     <div class="menu__side" id="menu_side">
-
         <div class="name__page">
             <i class="fas fa-home" title="Inicio"></i>
             <h4>ED Group</h4>
         </div>
 
-        <!-- Menu principal -->
-        
+        <!-- Opciones de menu -->
         <div class="options__menu container-fluid">
             <div class="form-group row">
-                <button type="button" class="btn btn-secondary form-control col-sm-12" onclick="VerHomeTitle();">
-                    <div class="option">
-                        <i class="fas fa-home" title="Inicio"></i>
-                        Inicio
-                    </div>
-                </a>
+                <button type="button" class="btn btn-light form-control col-sm-12" onclick="VerHomeTitle();">
+                    <a class=""><!--  selected -->
+                        <div class="option">
+                            <i class="fas fa-home" title="Inicio"></i>
+                            Inicio
+                        </div>
+                    </a>
+                </button>
             </div>
 
             <div class="form-group row">
-                <button type="button" class="btn btn-secondary form-control col-sm-12" onclick="VerEvaluacion();">
-                    <div class="option">
-                        <i class="fas fa-home" title="Evaluacion de empleados"></i>
-                        Evaluación de empleados
-                    </div>
+                <button type="button" class="btn btn-light form-control col-sm-12" onclick="VerEvaluacion();">
+                    <a class="">    
+                        <div class="option">
+                            <i class="fas fa-home" title="Evaluacion de empleados"></i>
+                            Evaluación de empleados
+                        </div>
+                    </a>
                 </button>
             </div>
         </div>
@@ -89,14 +87,16 @@
 
     <!-- Footer -->
     <br>
-    <footer class="bg-dark text-white py-4">
+    <footer class="bg-dark text-white py-4 footer">
         <div class="container">
             <nav class="row">
 
                 <!-- Footer -->
                 <a href="#" class="col-3 text-reset text-uppercase d-flex align-items-center">
-                    <img src="./resources/EDGroupLogo.png" alt="Logo EDGroup" class="img-logo mr-2 img-fluid" width="60px">
-                    ED Group
+                    <div class="form-group">
+                        <img src="./resources/logo nuevo 2.png" alt="Logo EDGroup" class="img-logo mr-2 img-fluid" width="60px">
+                        ED Group
+                    </div>
                 </a>
 
                 <!-- menu  -->
@@ -132,6 +132,6 @@
     </footer>
 
     <script src="./Controladores/menu_script.js?02022023"></script>
-
+    
 </body>
 </html>
