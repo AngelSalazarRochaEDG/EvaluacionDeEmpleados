@@ -36,6 +36,8 @@ var comentarios = ["","","","","","","","","","","","","","","","","","","","","
 
 var numPregunta = 0;
 
+const progressBar = document.getElementById("progreso");
+
 function Next() 
 {
     // console.log("");
@@ -46,8 +48,15 @@ function Next()
     if (numPregunta == 21) {
         document.querySelector("#SiguienteBtn").disabled = true;
         document.querySelector("#EnviarBtn").disabled = false;
+        const btnAnterior = document.getElementById("Anterior");
+        btnAnterior.insertAdjacentHTML("beforebegin",
+                "<div class='form-group' id='divComentarioGeneral'>" + 
+                "<label for='comentarioGeneralEvaluacion'>Comentarios generales</label>" + 
+                "<textarea class='form-control' id='comentarioGeneral' rows='3'></textarea>" +
+                "</div>"
+            );
     }
-    
+
     document.querySelector("#Anterior").disabled = false;
     
     PrintQuestions();
@@ -66,7 +75,10 @@ function Previous() {
         document.querySelector("#SiguienteBtn").disabled = false;
         document.querySelector("#EnviarBtn").disabled = true;
     }
-    
+    if (numPregunta == 20)
+    {
+        document.getElementById("divComentarioGeneral").remove();
+    }
     PrintQuestions();
 }
 
@@ -94,8 +106,13 @@ function PrintQuestions() {
         }
     }
     
+    //Efectuar progreso en barra de progreso
+    progressBar.setAttribute('style', 'width: ' + (numPregunta * 100/21) + '%');
+    progressBar.setAttribute('aria-valuenow', (numPregunta * 100/21) + "");
+
     lblPregunta.innerText = habilidades[numPregunta];
     
+    // Mostrar respuesta respecto al index que se guardó
     if (respuestas[numPregunta] == 0) {
         $("#opcion").val("Muy Insactisfactorio");
     }
@@ -108,23 +125,83 @@ function PrintQuestions() {
     if (respuestas[numPregunta] == 3) {
         $("#opcion").val("Sobresaliente");
     }
+
+    // Mostrar comentario del indice actual
+    $("#comentario").val(comentarios[numPregunta]);
 }
 
 function SaveAnswer() {
+    // para la resupesta
     var cmbOpcion = document.getElementById("opcion");
     respuestas[numPregunta] = cmbOpcion.selectedIndex;
+
+    // para el comentario de dicha respuesta
+    var inputComentario = document.getElementById("comentario");
+    comentarios[numPregunta] = $("#comentario").val();
+    //console.log("Comentario en arreglo; " + comentarios[numPregunta] + "\nComentario input; " + $("#comentario").val() + "\nIndice;" + numPregunta);
 }
 
-//Leer selección
-function ShowSelected()
-{
-    /* Para obtener el texto */
-    var combo = document.getElementById("opcion");
-    //var selected = combo.options[combo.selectedIndex].text;
-    console.log(combo.selectedIndex);
-}
+// //Leer selección
+// function ShowSelected()
+// {
+//     /* Para obtener el texto */
+//     var combo = document.getElementById("opcion");
+//     // var selected = combo.options[combo.selectedIndex].text;
+//     console.log(combo.selectedIndex);
+// }
 
 function Enviar() {
-    var promedio1 = 0, promedio2 = 0, promedio3 = 0, promedio4 = 0, promedio5
-    
+    // calcular promedios
+    var promedio1 = 0, promedio2 = 0, promedio3 = 0, promedio4 = 0, promedio5 = 0;
+
+
+    var i; // i < num preguntas, promedion = promedio / num pregutnas 
+    // PROMEDIO 1 //////////////////////////////////////////////////////////
+    for (i = 0; i < 4; i++) {
+        promedio1 = promedio1 + respuestas[i];
+    }
+    promedio1 = promedio1/i;
+    console.log("Promedio 1; " + promedio1);
+
+
+    // PROMEDIO 2 //////////////////////////////////////////////////////////
+    for(; i < 5; i++) {
+        promedio2 = promedio2 + respuestas[i];
+    }
+    promedio2 = promedio2/(5);
+    console.log("Promedio 2; " + promedio2);
+
+
+    // PROMEDIO 3 //////////////////////////////////////////////////////////
+    for(; i < 10; i++) {
+        promedio3 = promedio3 + respuestas[i];
+    }
+    promedio3 = promedio3/(5);
+    console.log("Promedio 3; " + promedio3);
+
+
+    // PROMEDIO 4 //////////////////////////////////////////////////////////
+    for(; i < 15; i++) {
+        promedio4 = promedio4 + respuestas[i];
+    }
+    promedio4 = promedio4/(5);
+    console.log("Promedio 4; " + promedio4);
+
+    //PROMEDIO 5 //////////////////////////////////////////////////////////
+    for(; i < 18; i++) {
+        promedio5 = promedio5 + respuestas[i];
+    }
+    promedio5 = promedio5/(3);
+    console.log("Promedio 5; " + promedio5);
+
+    $.post('Vistas/evaluacion_completa.php',
+        {pr1:promedio1,pr2:promedio2,pr3:promedio3,pr4:promedio4,pr5:promedio5,res:respuestas,com:comentarios},
+        function (data) {
+        if (data!=null) {
+            alert ("Evaluación enviada...");
+        }
+        else {
+            alert ("Error al enviar evaluación, verifique más tarde...");
+        }
+    });
 }

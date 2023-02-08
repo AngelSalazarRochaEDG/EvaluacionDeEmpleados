@@ -9,7 +9,6 @@
 
 // Al arranque mostrar home
 (function(){
-    console.log("todo bien1");
     //tiempo de espera
     var wait = 500;
     $.ajax({
@@ -30,7 +29,6 @@
 
 // Vista de home de nuevo pero con boton
 function VerHomeTitle() {
-    console.log("todo bien de evaluacion");
     //tiempo de espera
     var wait = 500;
     $.ajax({
@@ -51,7 +49,6 @@ function VerHomeTitle() {
 
 // Vista de evaluación...
 function VerEvaluacion() {
-    console.log("todo bien de evaluacion");
     //tiempo de espera
     var wait = 500;
     $.ajax({

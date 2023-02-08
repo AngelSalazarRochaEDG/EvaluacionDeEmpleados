@@ -8,13 +8,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evaluación de empleados</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/home_stiles.css?1">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script tipe="text/javascript" src="./Controladores/title_controller.js?02022023"></script>
     
+    <title>Evaluación de empleados</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="./css/home_stiles.css?1">
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <script tipe="text/javascript" src="./Controladores/title_controller.js?03022023"></script>
+    
     <script src="https://kit.fontawesome.com/41bcea2ae3.js"></script>
 </head>
 <body id="body">
@@ -132,6 +136,6 @@
     </footer>
 
     <script src="./Controladores/menu_script.js?02022023"></script>
-    
+
 </body>
 </html>

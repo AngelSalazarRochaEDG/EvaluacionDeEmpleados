@@ -6,10 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evaluacion de empleados</title>
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
     <link rel="stylesheet" href="./css/home_stiles.css?1">
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
-    <script tipe="text/javascript" src="./Controladores/evaluacion_front.js?02022023"></script>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <script tipe="text/javascript" src="./Controladores/evaluacion_front.js?07022023"></script>
 </head>
 <body>
     <div class="container">
@@ -57,9 +61,10 @@
             </div>
         </div>
         <br>
-        <!-- <div class="progress">
-                <div id="progreso" class="progress-bar bg-success" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-        </div> -->
+
+        <div class="progress">
+            <div id="progreso" class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
 
         <br>
         <form id="frmEvaluacion">
@@ -68,8 +73,8 @@
                 <div class="form-group row">
                     <label id="pregunta" for="Habilidad" class="col-sm-4 col-form-label">A. Precisión y calidad del trabajo realizado.</label>
                     
-                    <!-- select, opción -->
-                    <select id="opcion" class="form-control form-control-sm col-sm-3" onchange="ShowSelected();">
+                    <!-- select, opción --><!-- onchange="ShowSelected();"-->
+                    <select id="opcion" class="form-control form-control-sm col-sm-3">
                         <option>Muy Insactisfactorio</option>
                         <option>Insactisfactorio</option>
                         <option>Satisfactorio</option>
@@ -80,7 +85,9 @@
                         <input type="email" class="form-control form-control-sm col-sm-7" 
                             id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
                     </div>
+
                 </div>
+                <!-- Beforebegin del area de texto -->
                 
                 <!-- botones -->
                 <button id="Anterior" type="button" class="btn btn-secondary" disabled onclick="Previous();">Anterior</button>
