@@ -13,15 +13,14 @@
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
-    <script tipe="text/javascript" src="./Controladores/evaluacion_front.js?08022023"></script>
+    <script tipe="text/javascript" src="./Controladores/evaluacion_front.js?09022023"></script>
 </head>
 <body>
     <?php
-        include("../config/conexion.php");
-
+        require_once("../config/conexion.php");
+        // Esto vendria por parametros cuando sea llamado por un usuario de tipo empleado.
         $consulta = "select `Emp_Nombre`, `Emp_Departamento`, `Emp_Puesto`, `Emp_Supervisor`, `Emp_Fecha_Contratacion` from `empleado`";
         $resultado = mysqli_query($link, $consulta);
-
     ?>
 
     <div class="container">
@@ -80,6 +79,15 @@
             <div id="progreso" class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
 
+
+        <?php
+            
+            //Código para enviar la evaluación;
+            //require_once("evaluacion_code.php");
+            if (isset($_POST['enviar'])) {
+                require_once('evaluacion_code.php');
+            } else {
+        ?>
         <br>
         <form id="frmEvaluacion">
             <div class="form-group">
@@ -483,14 +491,27 @@
                         id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
                     </div>
                 </div>
+                
+                <div class='form-group' id='divComentarioGeneral'>
+                    <label for='comentarioGeneral'>Comentarios generales</label>
+                    <textarea class='form-control' rows='3' name="comentarioGeneral"></textarea>
+                </div>
+
+                <div class='form-group' id='divMetaProxima'>
+                    <label for='metaProxima'>Meta próxima</label>
+                    <textarea class='form-control' rows='2' name="comentarioGeneral"></textarea>
+                </div>
 
                 <!-- Beforebegin del area de texto -->
                 <!-- botones -->
                 <button id="Anterior" type="button" class="btn btn-secondary" disabled onclick="Previous();">Anterior</button>
                 <button id="SiguienteBtn" type="button" class="btn btn-secondary" onclick="Next();">Siguiente</button>
-                <button id="EnviarBtn" type="button" class="btn btn-primary" disabled onclick="Enviar();">Enviar</button>
+                <button id="EnviarBtn" type="button" class="btn btn-primary" disabled onclick="Enviar();" name="enviar">Enviar</button>
             </div>
         </form>
+        <?php
+            }
+        ?>
     </div>
     <?php mysqli_close($link); ?>
 </body>

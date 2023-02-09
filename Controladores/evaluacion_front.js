@@ -1,12 +1,28 @@
+// utilizado para mostrar y ocultar los grupos por pregunta, al enviar un post se enviarán todos y cada uno de los resultados
+// por separado hacia la base de datos
+var grupos = [
+    $("#1a"), $("#1b"), $('#1c'), $('#1d'), $('#2a'), $('#2b'), $('#2c'), $('#2d'),
+    $('#2e'), $('#3a'), $('#3b'), $('#3c'), $('#3d'), $('#3e'), $('#4a'),
+    $('#4b'), $('#4c'), $('#4d'), $('#4e'), $('#5a'), $('#5b'), $('#5c')
+];
+
+var selects = document.querySelectorAll("select");
+var inputs = document.querySelectorAll("input");
 
 (function(){
-    //$('#1a').hide();
-    console.log("Todo bien?");
-    $('#1a').show();
+    //ocultar todos los grupos excepto el primero
+    for (var i = 1; i < grupos.length; i++) {
+        grupos[i].hide();
+    }
+
+    //ocultar div de comentario final
+    $("#divComentarioGeneral").hide();
+    //ocultar div de meta proxima
+    $("#divMetaProxima").hide();
 })();
 
 //22 preguntas, 0-21
-var habilidades = [
+var preguntas = [
     "A. Precisión y calidad del trabajo realizado.",
     "B. Cantidad de trabajo completada.",
     "C. Organización del trabajo en tiempo y forma",
@@ -40,10 +56,14 @@ var comentarios = ["","","","","","","","","","","","","","","","","","","","","
 
 var numPregunta = 0;
 
-const progressBar = document.getElementById("progreso");
+var progressBar = document.getElementById("progreso");
 
 function Next() 
 {
+    // habilitar el siguiente y deshabilitar el anterior
+    grupos[numPregunta+1].show();
+    grupos[numPregunta].hide();
+
     SaveAnswer();
     if (numPregunta < 21) {
         numPregunta++;
@@ -52,15 +72,10 @@ function Next()
         document.querySelector("#SiguienteBtn").disabled = true;
         document.querySelector("#EnviarBtn").disabled = false;
         const btnAnterior = document.getElementById("Anterior");
-        btnAnterior.insertAdjacentHTML("beforebegin",
-                "<div class='form-group' id='divComentarioGeneral'>" + 
-                "<label for='comentarioGeneralEvaluacion'>Comentarios generales</label>" + 
-                "<textarea class='form-control' id='comentarioGeneral' rows='3'></textarea>" +
-                "</div>"
-            );
+        
+        $("#divComentarioGeneral").show();
+
     }
-    // console.log('Viendo el style del progressBar'); // si funciona
-    // document.getElementById('tablaEmpleado').setAttribute('style','display:none;');
 
     document.querySelector("#Anterior").disabled = false;
     
@@ -68,6 +83,10 @@ function Next()
 }
 
 function Previous() {
+    //Habilitar el anterior y deshabilitar el acutal
+    grupos[numPregunta].hide();
+    grupos[numPregunta-1].show();
+
     SaveAnswer();
     if (numPregunta > 0) {
         numPregunta--;
@@ -82,7 +101,8 @@ function Previous() {
     }
     if (numPregunta == 20)
     {
-        document.getElementById("divComentarioGeneral").remove();
+        //document.getElementById("divComentarioGeneral").remove();
+        $("#divComentarioGeneral").hide();
     }
     PrintQuestions();
 }
@@ -91,6 +111,7 @@ function PrintQuestions() {
     var lblHabilidad = document.getElementById("habilidad");
     var lblPregunta = document.getElementById("pregunta");
     
+    // cambiar de titulo
     if (numPregunta <= 3){
         lblHabilidad.innerText = "1. Calidad y productividad";
     } else {
@@ -115,35 +136,23 @@ function PrintQuestions() {
     progressBar.setAttribute('style', 'width: ' + (numPregunta * 100/21) + '%');
     progressBar.setAttribute('aria-valuenow', (numPregunta * 100/21) + "");
 
-    lblPregunta.innerText = habilidades[numPregunta];
+    //cambiar de pregunta
+    lblPregunta.innerText = preguntas[numPregunta];
     
-    // Mostrar respuesta respecto al index que se guardó
-    if (respuestas[numPregunta] == 0) {
-        $("#opcion").val("Muy Insactisfactorio");
-    }
-    if (respuestas[numPregunta] == 1) {
-        $("#opcion").val("Insactisfactorio");
-    }
-    if (respuestas[numPregunta] == 2) {
-        $("#opcion").val("Satisfactorio");
-    }
-    if (respuestas[numPregunta] == 3) {
-        $("#opcion").val("Sobresaliente");
-    }
-
+    // Guardar el indice actual seleccionado
+    selects[numPregunta].selectedIndex = respuestas[numPregunta];
+    
     // Mostrar comentario del indice actual
-    $("#comentario").val(comentarios[numPregunta]);
+    inputs[numPregunta].textContent = comentarios[numPregunta];
 }
 
 function SaveAnswer() {
     // para la resupesta
-    var cmbOpcion = document.getElementById("opcion");
-    respuestas[numPregunta] = cmbOpcion.selectedIndex;
+    respuestas[numPregunta] = selects[numPregunta].selectedIndex;
 
     // para el comentario de dicha respuesta
-    var inputComentario = document.getElementById("comentario");
-    comentarios[numPregunta] = $("#comentario").val();
-    //console.log("Comentario en arreglo; " + comentarios[numPregunta] + "\nComentario input; " + $("#comentario").val() + "\nIndice;" + numPregunta);
+    comentarios[numPregunta] = inputs[numPregunta].value;
+    console.log(comentarios[numPregunta]);
 }
 
 
@@ -151,72 +160,79 @@ function Enviar() {
     // calcular promedios
     var promedio1 = 0, promedio2 = 0, promedio3 = 0, promedio4 = 0, promedio5 = 0;
 
-
     var i; // i < num preguntas, promedion = promedio / num pregutnas 
     // PROMEDIO 1 //////////////////////////////////////////////////////////
     for (i = 0; i < 4; i++) {
         promedio1 = promedio1 + respuestas[i];
     }
     promedio1 = promedio1/i;
-
-
+    console.log(promedio1);
+    
     // PROMEDIO 2 //////////////////////////////////////////////////////////
-    for(; i < 5; i++) {
+    for(; i < 9; i++) {
         promedio2 = promedio2 + respuestas[i];
     }
     promedio2 = promedio2/(5);
-
-
+    console.log(promedio2);
+    
+    
     // PROMEDIO 3 //////////////////////////////////////////////////////////
-    for(; i < 10; i++) {
+    for(; i < 14; i++) {
         promedio3 = promedio3 + respuestas[i];
     }
     promedio3 = promedio3/(5);
-
-
+    console.log(promedio3);
+    
+    
     // PROMEDIO 4 //////////////////////////////////////////////////////////
-    for(; i < 15; i++) {
+    for(; i < 19; i++) {
         promedio4 = promedio4 + respuestas[i];
     }
     promedio4 = promedio4/(5);
-
+    console.log(promedio4);
+    
+    //Guardar lo ultimo en caso de que no haya sido guardado
+    respuestas[numPregunta] =  selects[numPregunta].selectedIndex;
     //PROMEDIO 5 //////////////////////////////////////////////////////////
-    for(; i < 18; i++) {
+    for(; i < 22; i++) {
         promedio5 = promedio5 + respuestas[i];
     }
     promedio5 = promedio5/(3);
+    console.log(promedio5);
     
 
-    var comentarioGeneral = document.getElementById("comentarioGeneral").value;
-    
 
-    //Enviando parametros para posterior post a base de datos
-    $.post('Vistas/evaluacion_completa.php',
-        {pr1:promedio1,pr2:promedio2,pr3:promedio3,pr4:promedio4,
-            pr5:promedio5,res:respuestas,com:comentarios, comG:comentarioGeneral},
-        function (data) {
-        if (data!=null) {
-            alert ("Evaluación enviada...");
+    //var comentarioGeneral = document.getElementById("comentarioGeneral").value;
 
-            //Abrir la vista de evaluacion enviada
-            var wait = 500;
-            $.ajax({
-                url: "Vistas/evaluacion_completa.php",
-                beforeSend : function() {
-                    $('#contenido').text('Enviando...');
-                },
-                success : function (data) {
-                    setTimeout(function() {
-                        $('#contenido').html(data);
-                    }, wait
-                    );
-                }
-            })
+    /////////// Este codigo es util mas no se usará para enviar los datos a la bd, 
+    /////////// en su lugar se enviará todo desde la ventana principal.
+    // //Enviando parametros para posterior post a base de datos
+    // $.post('Vistas/evaluacion_view.php',
+    //     {pr1:promedio1,pr2:promedio2,pr3:promedio3,pr4:promedio4,
+    //         pr5:promedio5,res:respuestas,com:comentarios, comG:comentarioGeneral},
+    //     function (data) {
+    //     if (data!=null) {
+    //         //alert ("Evaluación enviada...");
+
+    //         //Abrir la vista de evaluacion enviada
+    //         var wait = 500;
+    //         $.ajax({
+    //             url: "Vistas/evaluacion_view.php",
+    //             beforeSend : function() {
+    //                 $('#contenido').text('Enviando...');
+    //             },
+    //             success : function (data) {
+    //                 setTimeout(function() {
+    //                     $('#contenido').html(data);
+    //                 }, wait
+    //                 );
+    //             }
+    //         })
             
-        }
-        else {
-            alert ("Error al enviar evaluación, verifique más tarde...");
-            //Permanecer en la vista de evaluacion
-        }
-    });
+    //     }
+    //     else {
+    //         alert ("Error al enviar evaluación, verifique más tarde...");
+    //         //Permanecer en la vista de evaluacion
+    //     }
+    // });
 }
