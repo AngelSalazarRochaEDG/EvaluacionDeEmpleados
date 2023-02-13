@@ -8,7 +8,7 @@ create table if not exists Empleado (
     supervisor varchar(50),
     fecha_contratacion date,
 
-    constraint `pk_empleado` primary key(Emp_Clave)
+    constraint `pk_empleado` primary key(Clave)
 );
 
 create table if not exists Evaluacion (

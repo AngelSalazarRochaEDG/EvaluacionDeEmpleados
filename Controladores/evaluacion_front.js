@@ -10,15 +10,21 @@ var selects = document.querySelectorAll("select");
 var inputs = document.querySelectorAll("input");
 
 (function(){
+    console.log("Entrando a evaluacion front");
     //ocultar todos los grupos excepto el primero
     for (var i = 1; i < grupos.length; i++) {
         grupos[i].hide();
+        console.log("Ocultando el grupo; " + grupos[i]);
     }
-
+    
+    
+    console.log("Ocultando el comentario general ");
     //ocultar div de comentario final
-    $("#divComentarioGeneral").hide();
+    var cajaComentario = document.getElementById("divComentarioGeneral");
+    cajaComentario.setAttribute('style','display:block');
+    console.log(cajaComentario);
     //ocultar div de meta proxima
-    $("#divMetaProxima").hide();
+    $("#divMetaProxima2").hide();
 })();
 
 //22 preguntas, 0-21
@@ -74,6 +80,7 @@ function Next()
         const btnAnterior = document.getElementById("Anterior");
         
         $("#divComentarioGeneral").show();
+        $("#divMetaProxima").show();
 
     }
 
@@ -152,87 +159,87 @@ function SaveAnswer() {
 
     // para el comentario de dicha respuesta
     comentarios[numPregunta] = inputs[numPregunta].value;
-    console.log(comentarios[numPregunta]);
+    //console.log(comentarios[numPregunta]);
 }
 
 
-function Enviar() {
-    // calcular promedios
-    var promedio1 = 0, promedio2 = 0, promedio3 = 0, promedio4 = 0, promedio5 = 0;
+// function Enviar() {
+//     // calcular promedios
+//     var promedio1 = 0, promedio2 = 0, promedio3 = 0, promedio4 = 0, promedio5 = 0;
 
-    var i; // i < num preguntas, promedion = promedio / num pregutnas 
-    // PROMEDIO 1 //////////////////////////////////////////////////////////
-    for (i = 0; i < 4; i++) {
-        promedio1 = promedio1 + respuestas[i];
-    }
-    promedio1 = promedio1/i;
-    console.log(promedio1);
+//     var i; // i < num preguntas, promedion = promedio / num pregutnas 
+//     // PROMEDIO 1 //////////////////////////////////////////////////////////
+//     for (i = 0; i < 4; i++) {
+//         promedio1 = promedio1 + respuestas[i];
+//     }
+//     promedio1 = promedio1/i;
+//     console.log(promedio1);
     
-    // PROMEDIO 2 //////////////////////////////////////////////////////////
-    for(; i < 9; i++) {
-        promedio2 = promedio2 + respuestas[i];
-    }
-    promedio2 = promedio2/(5);
-    console.log(promedio2);
-    
-    
-    // PROMEDIO 3 //////////////////////////////////////////////////////////
-    for(; i < 14; i++) {
-        promedio3 = promedio3 + respuestas[i];
-    }
-    promedio3 = promedio3/(5);
-    console.log(promedio3);
+//     // PROMEDIO 2 //////////////////////////////////////////////////////////
+//     for(; i < 9; i++) {
+//         promedio2 = promedio2 + respuestas[i];
+//     }
+//     promedio2 = promedio2/(5);
+//     console.log(promedio2);
     
     
-    // PROMEDIO 4 //////////////////////////////////////////////////////////
-    for(; i < 19; i++) {
-        promedio4 = promedio4 + respuestas[i];
-    }
-    promedio4 = promedio4/(5);
-    console.log(promedio4);
+//     // PROMEDIO 3 //////////////////////////////////////////////////////////
+//     for(; i < 14; i++) {
+//         promedio3 = promedio3 + respuestas[i];
+//     }
+//     promedio3 = promedio3/(5);
+//     console.log(promedio3);
     
-    //Guardar lo ultimo en caso de que no haya sido guardado
-    respuestas[numPregunta] =  selects[numPregunta].selectedIndex;
-    //PROMEDIO 5 //////////////////////////////////////////////////////////
-    for(; i < 22; i++) {
-        promedio5 = promedio5 + respuestas[i];
-    }
-    promedio5 = promedio5/(3);
-    console.log(promedio5);
+    
+//     // PROMEDIO 4 //////////////////////////////////////////////////////////
+//     for(; i < 19; i++) {
+//         promedio4 = promedio4 + respuestas[i];
+//     }
+//     promedio4 = promedio4/(5);
+//     console.log(promedio4);
+    
+//     //Guardar lo ultimo en caso de que no haya sido guardado
+//     respuestas[numPregunta] =  selects[numPregunta].selectedIndex;
+//     //PROMEDIO 5 //////////////////////////////////////////////////////////
+//     for(; i < 22; i++) {
+//         promedio5 = promedio5 + respuestas[i];
+//     }
+//     promedio5 = promedio5/(3);
+//     console.log(promedio5);
     
 
 
-    //var comentarioGeneral = document.getElementById("comentarioGeneral").value;
+//     //var comentarioGeneral = document.getElementById("comentarioGeneral").value;
 
-    /////////// Este codigo es util mas no se usará para enviar los datos a la bd, 
-    /////////// en su lugar se enviará todo desde la ventana principal.
-    // //Enviando parametros para posterior post a base de datos
-    // $.post('Vistas/evaluacion_view.php',
-    //     {pr1:promedio1,pr2:promedio2,pr3:promedio3,pr4:promedio4,
-    //         pr5:promedio5,res:respuestas,com:comentarios, comG:comentarioGeneral},
-    //     function (data) {
-    //     if (data!=null) {
-    //         //alert ("Evaluación enviada...");
+//     /////////// Este codigo es util mas no se usará para enviar los datos a la bd, 
+//     /////////// en su lugar se enviará todo desde la ventana principal.
+//     // //Enviando parametros para posterior post a base de datos
+//     // $.post('Vistas/evaluacion_view.php',
+//     //     {pr1:promedio1,pr2:promedio2,pr3:promedio3,pr4:promedio4,
+//     //         pr5:promedio5,res:respuestas,com:comentarios, comG:comentarioGeneral},
+//     //     function (data) {
+//     //     if (data!=null) {
+//     //         //alert ("Evaluación enviada...");
 
-    //         //Abrir la vista de evaluacion enviada
-    //         var wait = 500;
-    //         $.ajax({
-    //             url: "Vistas/evaluacion_view.php",
-    //             beforeSend : function() {
-    //                 $('#contenido').text('Enviando...');
-    //             },
-    //             success : function (data) {
-    //                 setTimeout(function() {
-    //                     $('#contenido').html(data);
-    //                 }, wait
-    //                 );
-    //             }
-    //         })
+//     //         //Abrir la vista de evaluacion enviada
+//     //         var wait = 500;
+//     //         $.ajax({
+//     //             url: "Vistas/evaluacion_view.php",
+//     //             beforeSend : function() {
+//     //                 $('#contenido').text('Enviando...');
+//     //             },
+//     //             success : function (data) {
+//     //                 setTimeout(function() {
+//     //                     $('#contenido').html(data);
+//     //                 }, wait
+//     //                 );
+//     //             }
+//     //         })
             
-    //     }
-    //     else {
-    //         alert ("Error al enviar evaluación, verifique más tarde...");
-    //         //Permanecer en la vista de evaluacion
-    //     }
-    // });
-}
+//     //     }
+//     //     else {
+//     //         alert ("Error al enviar evaluación, verifique más tarde...");
+//     //         //Permanecer en la vista de evaluacion
+//     //     }
+//     // });
+// }

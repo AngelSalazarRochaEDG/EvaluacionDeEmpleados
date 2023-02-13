@@ -13,13 +13,13 @@
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
-    <script tipe="text/javascript" src="./Controladores/evaluacion_front.js?09022023"></script>
+    <script tipe="text/javascript" src="./Controladores/evaluacion_front.js?11022023"></script>
 </head>
 <body>
     <?php
         require_once("../config/conexion.php");
         // Esto vendria por parametros cuando sea llamado por un usuario de tipo empleado.
-        $consulta = "select `Emp_Nombre`, `Emp_Departamento`, `Emp_Puesto`, `Emp_Supervisor`, `Emp_Fecha_Contratacion` from `empleado`";
+        $consulta = "select `Nombre`, `Departamento`, `Puesto`, `Supervisor`, `Fecha_Contratacion` from `empleado`";
         $resultado = mysqli_query($link, $consulta);
     ?>
 
@@ -49,11 +49,11 @@
                             while($fila = mysqli_fetch_assoc($resultado)){
                         ?>
                         <tr>
-                            <td><?php echo $fila["Emp_Nombre"]; ?></td>
-                            <td><?php echo $fila["Emp_Departamento"]; ?></td>
-                            <td><?php echo $fila["Emp_Puesto"]; ?></td>
-                            <td><?php echo $fila["Emp_Supervisor"]; ?></td>
-                            <td><?php echo $fila["Emp_Fecha_Contratacion"]; ?></td>
+                            <td><?php echo $fila["Nombre"]; ?></td>
+                            <td><?php echo $fila["Departamento"]; ?></td>
+                            <td><?php echo $fila["Puesto"]; ?></td>
+                            <td><?php echo $fila["Supervisor"]; ?></td>
+                            <td><?php echo $fila["Fecha_Contratacion"]; ?></td>
                             <td><?=date('m/d/Y'); ?></td>
                         </tr>
                         <?php
@@ -81,21 +81,22 @@
 
 
         <?php
-            
             //Código para enviar la evaluación;
             //require_once("evaluacion_code.php");
+            echo "<script> alert('Entrando a enviar'); </script>";
+
             if (isset($_POST['enviar'])) {
-                require_once('evaluacion_code.php');
+                echo "<script> alert('Entrando a enviar 2'); </script>";
+                require_once('evaluacion_code.php?11022023');
             } else {
+                echo "<script> alert('No entro al enviar 2'); </script>";
         ?>
         <br>
         <form id="frmEvaluacion">
             <div class="form-group">
-
-<!-- Pregunta 1  -->
+            <!-- Pregunta 1  -->
                 <h6 id="habilidad">1. Calidad y productividad</h6>
-                
-<!-- Inciso a -->
+            <!-- Inciso a -->
                 <div class="form-group row">
                     <label id="pregunta" for="Habilidad" class="col-sm-4 col-form-label">A. Precisión y calidad del trabajo realizado.</label>
                 </div>
@@ -109,14 +110,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment1a" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment1a" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 1  -->
+            <!-- Pregunta 1  -->
                 
-<!-- Inciso b  -->
+            <!-- Inciso b  -->
                     
                 <div id="1b" class="form-group row">
                     <select name="opcion1b" class="form-control form-control-sm col-sm-3">
@@ -127,14 +128,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment1b" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment1b" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 1  -->
-                
-<!-- Inciso c -->
+            <!-- Pregunta 1  -->
+                            
+            <!-- Inciso c -->
                     
                 <div id="1c" class="form-group row">
                     <select name="opcion1c" class="form-control form-control-sm col-sm-3">
@@ -145,14 +146,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment1c" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment1c" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 1  -->
-                
-<!-- Inciso d -->
+            <!-- Pregunta 1  -->
+                            
+            <!-- Inciso d -->
                     
                 <div id="1d" class="form-group row">
                     <select name="opcion1d" class="form-control form-control-sm col-sm-3">
@@ -163,14 +164,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment1d" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment1d" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 2  -->
-                
-<!-- Inciso a -->
+            <!-- Pregunta 2  -->
+                            
+            <!-- Inciso a -->
                     
                 <div id="2a" class="form-group row">
                     <select name="opcion2a" class="form-control form-control-sm col-sm-3">
@@ -181,14 +182,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment2a" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment2a" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 2  -->
-                
-<!-- Inciso b -->
+            <!-- Pregunta 2  -->
+                            
+            <!-- Inciso b -->
                     
                 <div id="2b" class="form-group row">
                     <select name="opcion2b" class="form-control form-control-sm col-sm-3">
@@ -199,14 +200,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment2b" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment2b" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 2  -->
-                
-<!-- Inciso c -->
+            <!-- Pregunta 2  -->
+                            
+            <!-- Inciso c -->
                     
                 <div id="2c" class="form-group row">
                     <select name="opcion2c" class="form-control form-control-sm col-sm-3">
@@ -217,14 +218,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment2c" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment2c" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 2  -->
-                
-<!-- Inciso d -->
+            <!-- Pregunta 2  -->
+                            
+            <!-- Inciso d -->
                     
                 <div id="2d" class="form-group row">
                     <select name="opcion2d" class="form-control form-control-sm col-sm-3">
@@ -235,14 +236,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment2d" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment2d" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 2  -->
-                
-<!-- Inciso e -->
+            <!-- Pregunta 2  -->
+                            
+            <!-- Inciso e -->
                     
                 <div id="2e" class="form-group row">
                     <select name="opcion2e" class="form-control form-control-sm col-sm-3">
@@ -253,14 +254,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment2e" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment2e" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 3 -->
-                
-<!-- Inciso a -->
+            <!-- Pregunta 3 -->
+                            
+            <!-- Inciso a -->
                     
                 <div id="3a" class="form-group row">
                     <select name="opcion3a" class="form-control form-control-sm col-sm-3">
@@ -271,14 +272,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment3a" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment3a" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 3  -->
-                
-<!-- Inciso b -->
+            <!-- Pregunta 3  -->
+                            
+            <!-- Inciso b -->
                     
                 <div id="3b" class="form-group row">
                     <select name="opcion3b" class="form-control form-control-sm col-sm-3">
@@ -289,14 +290,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment3b" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment3b" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 3  -->
-                
-<!-- Inciso c -->
+            <!-- Pregunta 3  -->
+                            
+            <!-- Inciso c -->
                     
                 <div id="3c" class="form-group row">
                     <select name="opcion3c" class="form-control form-control-sm col-sm-3">
@@ -307,14 +308,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment3c" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment3c" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 3  -->
-                
-<!-- Inciso d -->
+            <!-- Pregunta 3  -->
+                            
+            <!-- Inciso d -->
                     
                 <div id="3d" class="form-group row">
                     <select name="opcion3d" class="form-control form-control-sm col-sm-3">
@@ -325,14 +326,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment3d" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment3d" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 3  -->
-                
-<!-- Inciso e -->
+            <!-- Pregunta 3  -->
+                            
+            <!-- Inciso e -->
                     
                 <div id="3e" class="form-group row">
                     <select name="opcion3e" class="form-control form-control-sm col-sm-3">
@@ -343,14 +344,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment3e" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment3e" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 4  -->
-                
-<!-- Inciso a -->
+            <!-- Pregunta 4  -->
+                            
+            <!-- Inciso a -->
                     
                 <div id="4a" class="form-group row">
                     <select name="opcion4a" class="form-control form-control-sm col-sm-3">
@@ -361,14 +362,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment4a" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment4a" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 4  -->
-                
-<!-- Inciso b -->
+            <!-- Pregunta 4  -->
+                            
+            <!-- Inciso b -->
                     
                 <div id="4b" class="form-group row">
                     <select name="opcion4b" class="form-control form-control-sm col-sm-3">
@@ -379,14 +380,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment4b" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment4b" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 4  -->
-                
-<!-- Inciso c -->
+            <!-- Pregunta 4  -->
+                            
+            <!-- Inciso c -->
                     
                 <div id="4c" class="form-group row">
                     <select name="opcion4c" class="form-control form-control-sm col-sm-3">
@@ -397,14 +398,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment4c" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment4c" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 4  -->
-                
-<!-- Inciso d -->
+            <!-- Pregunta 4  -->
+                            
+            <!-- Inciso d -->
                     
                 <div id="4d" class="form-group row">
                     <select name="opcion4d" class="form-control form-control-sm col-sm-3">
@@ -415,14 +416,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment4d" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment4d" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 4  -->
-                
-<!-- Inciso e -->
+            <!-- Pregunta 4  -->
+                            
+            <!-- Inciso e -->
                     
                 <div id="4e" class="form-group row">
                     <select name="opcion4e" class="form-control form-control-sm col-sm-3">
@@ -433,14 +434,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment4e" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment4e" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 5  -->
-                
-<!-- Inciso a -->
+            <!-- Pregunta 5  -->
+                            
+            <!-- Inciso a -->
                     
                 <div id="5a" class="form-group row">
                     <select name="opcion5a" class="form-control form-control-sm col-sm-3">
@@ -451,14 +452,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment5a" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment5a" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 5  -->
-                
-<!-- Inciso b -->
+            <!-- Pregunta 5  -->
+                            
+            <!-- Inciso b -->
                     
                 <div id="5b" class="form-group row">
                     <select name="opcion5b" class="form-control form-control-sm col-sm-3">
@@ -469,14 +470,14 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment5b" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment5b" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
 
-<!-- Pregunta 5  -->
-                
-<!-- Inciso c -->
+            <!-- Pregunta 5  -->
+                            
+            <!-- Inciso c -->
                     
                 <div id="5c" class="form-group row">
                     <select name="opcion5c" class="form-control form-control-sm col-sm-3">
@@ -487,8 +488,8 @@
                     </select>
                     
                     <div class="col">
-                        <input type="email" name="coment5c" class="form-control form-control-sm col-sm-5" 
-                        id="comentario" aria-describedby="emailHelp" placeholder="Comentarios">
+                        <input type="text" name="coment5c" class="form-control form-control-sm col-sm-5" 
+                        id="comentario" aria-describedby="textHelp" placeholder="Comentarios">
                     </div>
                 </div>
                 
@@ -499,14 +500,27 @@
 
                 <div class='form-group' id='divMetaProxima'>
                     <label for='metaProxima'>Meta próxima</label>
-                    <textarea class='form-control' rows='2' name="comentarioGeneral"></textarea>
+                    <textarea class='form-control' rows='2' name="metaProxima"></textarea>
                 </div>
 
                 <!-- Beforebegin del area de texto -->
                 <!-- botones -->
                 <button id="Anterior" type="button" class="btn btn-secondary" disabled onclick="Previous();">Anterior</button>
                 <button id="SiguienteBtn" type="button" class="btn btn-secondary" onclick="Next();">Siguiente</button>
-                <button id="EnviarBtn" type="button" class="btn btn-primary" disabled onclick="Enviar();" name="enviar">Enviar</button>
+                <button id="EnviarBtn" type="submit" class="btn btn-primary" disabled name="enviar">Enviar</button>
+
+<!-- Clave del empleado escondida -->
+                <?php
+                    $clave = "select `clave` from `empleado`";
+                    $resultado = mysqli_query($link, $clave);
+                    
+                    while($fila = mysqli_fetch_assoc($resultado)){
+                ?>
+                    <input type="text" name="clave" value="<?php echo $fila["clave"]; ?>" style="display: none"></input>
+                <?php
+                    }
+                ?>
+                
             </div>
         </form>
         <?php
