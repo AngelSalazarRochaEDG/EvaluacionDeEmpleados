@@ -2,4 +2,6 @@
 DirectoryIndex Vistas/home_title.php
 
 RewriteEngine On
-RewriteRule ^evaluacion$  Vistas/home_title.php
+RewriteRule ^recursos_humanos$  Vistas/home_title.php
+RewriteRule ^recursos_humanos/evaluar$ Vistas/evaluacion_view.php
+RewriteRule ^recursos_humanos/supervision$ Vistas/supervisor_view.php

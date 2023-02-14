@@ -1,6 +1,3 @@
-<?php
-    include '../Modelos/evaluacion_model.php';
-?>
 <!-- Pagina principal, menu de titulo, home... -->
 <!DOCTYPE html>
 <html lang="en">
@@ -13,11 +10,11 @@
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
-    <link rel="stylesheet" href="./css/home_stiles.css?1">
+    <link rel="stylesheet" href="./css/home_stiles.css?14">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
-    <script tipe="text/javascript" src="./Controladores/title_controller.js?13022023"></script>
+    <script tipe="text/javascript" src="./Controladores/title_controller.js?14022023"></script>
     
     <script src="https://kit.fontawesome.com/41bcea2ae3.js"></script>
 </head>
@@ -69,8 +66,19 @@
                 <button type="button" class="btn btn-light form-control col-sm-12" onclick="VerEvaluacion();">
                     <a class="">    
                         <div class="option">
-                            <i class="fas fa-home" title="Evaluacion de empleados"></i>
-                            Evaluación de empleados
+                            <i class="fa-solid fa-users" title="Evaluacion de empleados"></i>
+                            Recursos Humanos
+                        </div>
+                    </a>
+                </button>
+            </div>
+
+            <div class="form-group row">
+                <button type="button" class="btn btn-light form-control col-sm-12" onclick="VerSupervisor();">
+                    <a class="">    
+                        <div class="option">
+                            <i class="fa-solid fa-file-pen" title="Supervisor"></i>
+                            Otras Cosas
                         </div>
                     </a>
                 </button>

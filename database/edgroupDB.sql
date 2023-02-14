@@ -39,14 +39,15 @@ create table if not exists Respuesta (
 
 create table if not exists users
 (
-    id_user int AUTO_INCREMENT,
+    id int AUTO_INCREMENT,
     email varchar(30) not null,
     `password` varchar(100) not null,
-    ip_address varchar(20) not null,
+    ip varchar(20) not null,
     created_at datetime not null,
     updated_at datetime not null,
-    validated char(1),
-    first_name varchar(25),
+    validated char(5),
+    token varchar(255),
+    fname varchar(25),
 
-    constraint `pk_user` primary key (id_user)
+    constraint `pk_user` primary key (id)
 );

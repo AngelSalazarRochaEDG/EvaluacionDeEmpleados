@@ -9,19 +9,97 @@
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
-    <link rel="stylesheet" href="./css/home_stiles.css?1">
+    <link rel="stylesheet" href="../css/home_stiles.css">
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
-    <script tipe="text/javascript" src="./Controladores/evaluacion_front.js?13022023"></script>
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js"></script>
+
 </head>
-<body>
+<body id="body">
     <?php
         require_once("../config/conexion.php");
         // Esto vendria por parametros cuando sea llamado por un usuario de tipo empleado.
         $consulta = "select `Nombre`, `Departamento`, `Puesto`, `Supervisor`, `Fecha_Contratacion` from `empleado`";
         $resultado = mysqli_query($link, $consulta);
     ?>
+
+    <!-- titulo y menu -->
+    <div id="main-app" class="main-wrapper">
+        <nav class="navbar navbar-light bg-light">
+
+            <header>
+                <div class="icon__menu">
+                    <i class="fas fa-bars" id="btn_open"></i>
+                </div>
+            </header>
+
+            <a href="#" class="col-md-3 text-reset text-uppercase d-flex align-items-center">
+                <img src="../resources/logo nuevo.png" alt="Logo EDGroup" class="img-logo mr-2 img-fluid" width="60px">
+                <a class="navbar-brand">ED Group - Evaluacion</a>
+            </a>
+            <form class="form-inline">
+                <input class="form-control mr-sm-3" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+    </div>
+    
+    <!-- Titulo de menu principal -->
+    <div class="menu__side" id="menu_side">
+        <div class="name__page">
+            <i class="fas fa-home" title="Inicio"></i>
+            <h4>ED Group</h4>
+        </div>
+
+        <!-- Opciones de menu -->
+        <div class="options__menu container-fluid">
+            <div class="form-group row">
+                <button type="button" class="btn btn-primary form-control col-sm-12">
+                    <a class="" href="../recursos_humanos"><!--  selected -->
+                        <div class="option">
+                            <i class="fa-solid fa-file-pen" title="Inicio"></i>
+                            Regresar
+                        </div>
+                    </a>
+                </button>
+            </div>
+
+            <div class="form-group row">
+                <button type="button" class="btn btn-primary form-control col-sm-12">
+                    <a class="" href="evaluar"><!--  selected -->
+                        <div class="option">
+                            <i class="fa-solid fa-file-pen" title="Inicio"></i>
+                            Evaluar
+                        </div>
+                    </a>
+                </button>
+            </div>
+
+            <div class="form-group row">
+                <button type="button" class="btn btn-primary form-control col-sm-12">
+                    <a class="" href="evaluaciones">    
+                        <div class="option">
+                            <i class="fa-solid fa-file" title="Evaluacion de empleados"></i>
+                            Evaluaciones previas
+                        </div>
+                    </a>
+                </button>
+            </div>
+
+            <div class="form-group row">
+                <button type="button" class="btn btn-primary form-control col-sm-12">
+                    <a class="" href="supervision">    
+                        <div class="option">
+                            <i class="fa-solid fa-file-pen" title="Supervisor"></i>
+                            Supervision
+                        </div>
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+
 
     <div class="container">
         <div class="row">
@@ -66,7 +144,7 @@
         <br>
         
         <div class="row">
-            <div class="form-group col-sm-9 col-md-7 col-lg-5">
+            <div class="form-group col-sm-10 col-md-10 col-lg-10">
                 <h5>Cuestionario</h5>
                 Se calificara cada pregunta utilizando la escala numérica del 0 al 3.
                 Donde 0 es Muy insactisfactorio, 1 es Insactisfactorio, 2 es Sactisfactorio y 3 es Sobresaliente.
@@ -98,7 +176,7 @@
                 <h6 id="habilidad">1. Calidad y productividad</h6>
             <!-- Inciso a -->
                 <div class="form-group row">
-                    <label id="pregunta" for="Habilidad" class="col-sm-4 col-form-label">A. Precisión y calidad del trabajo realizado.</label>
+                    <label id="pregunta" for="Habilidad" class="col-sm-8 col-md-8 col-lg-8 col-form-label">A. Precisión y calidad del trabajo realizado.</label>
                 </div>
                     
                 <div id="1a" class="form-group row">
@@ -528,5 +606,52 @@
         ?>
     </div>
     <?php mysqli_close($link); ?>
+
+    <footer class="bg-dark text-white py-4 footer">
+        <div class="container">
+            <nav class="row">
+
+                <!-- Footer -->
+                <a href="#" class="col-3 text-reset text-uppercase d-flex align-items-center">
+                    <div class="form-group">
+                        <img src="../resources/logo nuevo 2.png" alt="Logo EDGroup" class="img-logo mr-2 img-fluid" width="60px">
+                        ED Group
+                    </div>
+                </a>
+
+                <!-- menu  -->
+                <ul class="col-3 list-unstyled">
+                    <li class="font-weight-blod text-uppercase">Principal</li>
+                    <!--edgroup univeristy... -->
+                    <li class="d-flex justify-content-between" ><a href="#" class="text-reset text-white">Link 1</a></li>
+                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 2</a></li>
+                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 3</a></li>
+                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 4</a></li>
+                </ul>
+
+                <!-- cursos -->
+                <ul class="col-3 list-unstyled">
+                    <li class="font-weight-blod text-uppercase">Redes sociales</li>
+                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 1</a></li>
+                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 2</a></li>
+                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 3</a></li>
+                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 4</a></li>
+                </ul>
+                
+                <!-- social networks -->
+                <ul class="col-3 list-unstyled">
+                    <li class="font-weight-blod text-uppercase">Ayuda</li>
+                    <!-- soporte, contactos, ubicación... -->
+                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 1</a></li>
+                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 2</a></li>
+                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 3</a></li>
+                    <li class="d-flex justify-content-between"><a href="#" class="text-reset text-white">Link 4</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../Controladores/menu_script.js"></script>
+    <script tipe="text/javascript" src="../Controladores/evaluacion_front.js?14022023"></script>
 </body>
 </html>

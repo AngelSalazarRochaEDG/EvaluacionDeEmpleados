@@ -1,7 +1,7 @@
 <?php
 
     //if(isset($_SESSION['usuario'])){
-    header('location: evaluacion');
+    header('location: recursos_humanos');
     //}else{
     //     header('location: login');
     // }

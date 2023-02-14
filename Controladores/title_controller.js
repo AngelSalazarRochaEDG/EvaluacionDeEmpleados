@@ -64,3 +64,22 @@ function VerEvaluacion() {
         }
     })
 }
+
+function VerSupervisor() {
+    
+    var wait = 500;
+    $.ajax({
+
+        url: "Vistas/supervisor_view.php",
+        beforeSend : function() {
+            
+            $('#contenido').text('Cargando Supervision...');
+        },
+        success : function(data) {
+            setTimeout(function() {
+                $('#contenido').html(data);
+            }, wait
+            );
+        }
+    })
+}
