@@ -10,21 +10,17 @@ var selects = document.querySelectorAll("select");
 var inputs = document.querySelectorAll("input");
 
 (function(){
-    console.log("Entrando a evaluacion front");
+    
     //ocultar todos los grupos excepto el primero
     for (var i = 1; i < grupos.length; i++) {
         grupos[i].hide();
-        console.log("Ocultando el grupo; " + grupos[i]);
     }
     
-    
-    console.log("Ocultando el comentario general ");
-    //ocultar div de comentario final
-    var cajaComentario = document.getElementById("divComentarioGeneral");
-    cajaComentario.setAttribute('style','display:block');
-    console.log(cajaComentario);
+    //Ocultar el comentario general
+    $("#divComentarioGeneral").hide();
+
     //ocultar div de meta proxima
-    $("#divMetaProxima2").hide();
+    $("#divMetaProxima").hide();
 })();
 
 //22 preguntas, 0-21
@@ -76,7 +72,7 @@ function Next()
     }
     if (numPregunta == 21) {
         document.querySelector("#SiguienteBtn").disabled = true;
-        document.querySelector("#EnviarBtn").disabled = false;
+        document.querySelector("#enviar").disabled = false;
         const btnAnterior = document.getElementById("Anterior");
         
         $("#divComentarioGeneral").show();
@@ -104,12 +100,13 @@ function Previous() {
     
     if (numPregunta < 21) {
         document.querySelector("#SiguienteBtn").disabled = false;
-        document.querySelector("#EnviarBtn").disabled = true;
+        document.querySelector("#enviar").disabled = true;
     }
     if (numPregunta == 20)
     {
         //document.getElementById("divComentarioGeneral").remove();
         $("#divComentarioGeneral").hide();
+        $("#divMetaProxima").hide();
     }
     PrintQuestions();
 }

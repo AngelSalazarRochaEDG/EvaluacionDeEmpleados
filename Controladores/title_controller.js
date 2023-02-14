@@ -4,28 +4,26 @@
 // que se ejecute al iniciar la pagina
 
 
-// original;
-// $('#btnAccion').click(function(){...
 
-// Al arranque mostrar home
-// (function(){
-//     //tiempo de espera
-//     var wait = 500;
-//     $.ajax({
-//         //pagina por cargar
-//         url: "Vistas/home_title.php",
-//         beforeSend : function() {
-//             //divider donde se cargará el contenido
-//             $('#contenido').text('Cargando Inicio...');
-//         },
-//         success : function(data) {
-//             setTimeout(function() {
-//                 $('#contenido').html(data);
-//             }, wait
-//             );
-//         }
-//     })
-// })();
+//Al arranque mostrar home
+(function(){
+    //tiempo de espera
+    var wait = 500;
+    $.ajax({
+        //pagina por cargar
+        url: "Vistas/home_view.php",
+        beforeSend : function() {
+            //divider donde se cargará el contenido
+            $('#contenido').text('Cargando Inicio...');
+        },
+        success : function(data) {
+            setTimeout(function() {
+                $('#contenido').html(data);
+            }, wait
+            );
+        }
+    })
+})();
 
 // Vista de home de nuevo pero con boton
 function VerHomeTitle() {
@@ -33,7 +31,7 @@ function VerHomeTitle() {
     var wait = 500;
     $.ajax({
         //pagina por cargar
-        url: "Vistas/home_title.php",
+        url: "Vistas/home_view.php",
         beforeSend : function() {
             //divider donde se cargará el contenido
             $('#contenido').text('Cargando Inicio...');
@@ -66,4 +64,3 @@ function VerEvaluacion() {
         }
     })
 }
-

@@ -17,7 +17,7 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
-    <script tipe="text/javascript" src="./Controladores/title_controller.js?03022023"></script>
+    <script tipe="text/javascript" src="./Controladores/title_controller.js?13022023"></script>
     
     <script src="https://kit.fontawesome.com/41bcea2ae3.js"></script>
 </head>

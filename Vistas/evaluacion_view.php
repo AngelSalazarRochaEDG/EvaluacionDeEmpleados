@@ -13,7 +13,7 @@
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
-    <script tipe="text/javascript" src="./Controladores/evaluacion_front.js?11022023"></script>
+    <script tipe="text/javascript" src="./Controladores/evaluacion_front.js?13022023"></script>
 </head>
 <body>
     <?php
@@ -83,16 +83,16 @@
         <?php
             //Código para enviar la evaluación;
             //require_once("evaluacion_code.php");
-            echo "<script> alert('Entrando a enviar'); </script>";
+            //echo "<script> alert('Entrando a enviar'); </script>";
 
-            if (isset($_POST['enviar'])) {
-                echo "<script> alert('Entrando a enviar 2'); </script>";
-                require_once('evaluacion_code.php?11022023');
-            } else {
-                echo "<script> alert('No entro al enviar 2'); </script>";
+        if (isset($_POST['enviar'])) {
+            //echo "<script> alert('Entrando a enviar 2'); </script>";
+            require_once('evaluacion_code.php');
+        } else {
+            //echo "<script> alert('No entro al enviar 2'); </script>";
         ?>
         <br>
-        <form id="frmEvaluacion">
+        <form id="frmEvaluacion" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
             <div class="form-group">
             <!-- Pregunta 1  -->
                 <h6 id="habilidad">1. Calidad y productividad</h6>
@@ -507,7 +507,7 @@
                 <!-- botones -->
                 <button id="Anterior" type="button" class="btn btn-secondary" disabled onclick="Previous();">Anterior</button>
                 <button id="SiguienteBtn" type="button" class="btn btn-secondary" onclick="Next();">Siguiente</button>
-                <button id="EnviarBtn" type="submit" class="btn btn-primary" disabled name="enviar">Enviar</button>
+                <button id="enviar" type="submit" class="btn btn-primary" disabled name="enviar">Enviar</button>
 
 <!-- Clave del empleado escondida -->
                 <?php
@@ -524,7 +524,7 @@
             </div>
         </form>
         <?php
-            }
+        }
         ?>
     </div>
     <?php mysqli_close($link); ?>

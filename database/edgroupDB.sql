@@ -1,5 +1,5 @@
 create database if not exists EDGroup;
-
+use edgroupM;
 create table if not exists Empleado (
     clave varchar(10) not null,
 	nombre varchar(50),
@@ -13,7 +13,7 @@ create table if not exists Empleado (
 
 create table if not exists Evaluacion (
     id_evaluacion int AUTO_INCREMENT,
-    fecha_evaluacion date,
+    fecha_evaluacion datetime DEFAULT current_timestamp,
     comentario_empleado varchar(250),
     comentario_supervisor varchar(250),
     meta_proxima varchar(200),
