@@ -9,7 +9,7 @@
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
-    <link rel="stylesheet" href="../css/home_stiles.css">
+    <link rel="stylesheet" href="../css/home_stiles.css?15">
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
@@ -27,21 +27,19 @@
     <!-- titulo y menu -->
     <div id="main-app" class="main-wrapper">
         <nav class="navbar navbar-light bg-light">
+            
+                <header class="col-md-1">
+                    <div class="icon__menu">
+                        <i class="fas fa-bars" id="btn_open"></i>
+                    </div>
+                </header>
+    
+                <a href="../recursos_humanos" class="col-md-2  text-reset text-uppercase d-flex align-items-center">
+                    <img src="../resources/logo nuevo.png" alt="Logo EDGroup" class="" >
+                </a>
+                <h4 class="col-md-3">ED Group - Evaluacion</h4>
+                <h4 class="col-md-3">Welcome!</h4>
 
-            <header>
-                <div class="icon__menu">
-                    <i class="fas fa-bars" id="btn_open"></i>
-                </div>
-            </header>
-
-            <a href="#" class="col-md-3 text-reset text-uppercase d-flex align-items-center">
-                <img src="../resources/logo nuevo.png" alt="Logo EDGroup" class="img-logo mr-2 img-fluid" width="60px">
-                <a class="navbar-brand">ED Group - Evaluacion</a>
-            </a>
-            <form class="form-inline">
-                <input class="form-control mr-sm-3" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </nav>
     </div>
     
@@ -55,53 +53,45 @@
         <!-- Opciones de menu -->
         <div class="options__menu container-fluid">
             <div class="form-group row">
-                <button type="button" class="btn btn-primary form-control col-sm-12">
-                    <a class="" href="../recursos_humanos"><!--  selected -->
-                        <div class="option">
-                            <i class="fa-solid fa-file-pen" title="Inicio"></i>
-                            Regresar
-                        </div>
-                    </a>
-                </button>
+                <a class="btn btn-light form-control col-sm-12" href="../recursos_humanos"><!--  selected -->
+                    <div class="option">
+                        <i class="fa-solid fa-reply" title="Inicio"></i>
+                        Regresar
+                    </div>
+                </a>
             </div>
 
             <div class="form-group row">
-                <button type="button" class="btn btn-primary form-control col-sm-12">
-                    <a class="" href="evaluar"><!--  selected -->
-                        <div class="option">
-                            <i class="fa-solid fa-file-pen" title="Inicio"></i>
-                            Evaluar
-                        </div>
-                    </a>
-                </button>
+                <a class="btn btn-light form-control col-sm-12" href="evaluar"><!--  selected -->
+                    <div class="option">
+                        <i class="fa-solid fa-file-pen" title="Inicio"></i>
+                        Evaluar
+                    </div>
+                </a>
             </div>
 
             <div class="form-group row">
-                <button type="button" class="btn btn-primary form-control col-sm-12">
-                    <a class="" href="evaluaciones">    
-                        <div class="option">
-                            <i class="fa-solid fa-file" title="Evaluacion de empleados"></i>
-                            Evaluaciones previas
-                        </div>
-                    </a>
-                </button>
+                <a class="btn btn-light form-control col-sm-12" href="evaluaciones">    
+                    <div class="option">
+                        <i class="fa-solid fa-file" title="Evaluacion de empleados"></i>
+                        Evaluaciones previas
+                    </div>
+                </a>
             </div>
 
             <div class="form-group row">
-                <button type="button" class="btn btn-primary form-control col-sm-12">
-                    <a class="" href="supervision">    
-                        <div class="option">
-                            <i class="fa-solid fa-file-pen" title="Supervisor"></i>
-                            Supervision
-                        </div>
-                    </a>
-                </button>
+                <a class="btn btn-light form-control col-sm-12" href="supervision">    
+                    <div class="option">
+                        <i class="fa-solid fa-file-pen" title="Supervisor"></i>
+                        Supervision
+                    </div>
+                </a>
             </div>
         </div>
     </div>
 
 
-    <div class="container">
+    <div class="container col-md-11">
         <div class="row">
             <div class="col-md-12 col-sm-10 col-lg-12">
                 <br>
@@ -614,7 +604,7 @@
                 <!-- Footer -->
                 <a href="#" class="col-3 text-reset text-uppercase d-flex align-items-center">
                     <div class="form-group">
-                        <img src="../resources/logo nuevo 2.png" alt="Logo EDGroup" class="img-logo mr-2 img-fluid" width="60px">
+                        <img src="../resources/logo nuevo 2.png" alt="Logo EDGroup" class="col-md-4" width="20px">
                         ED Group
                     </div>
                 </a>

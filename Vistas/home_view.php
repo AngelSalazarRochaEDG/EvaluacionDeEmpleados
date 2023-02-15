@@ -17,36 +17,7 @@
 <body>
     <div class="container contenedor">
 
-        <div class="form-group row justify-content-center">
-            <h3>Human Resources</h3>
-        </div>
-        <div class="form-group row justify-content-center">
-            <h4>Recursos humanos</h3>
-        </div>
-
-        <div class="options__home">
-            <div class="form-group row justify-content-md-center">
-                <button type="button" class="btn btn-success form-control col-sm-5">
-                    <a class="" href="recursos_humanos/evaluar">    
-                        <div class="option">
-                            <i class="fa-solid fa-users" title="Evaluacion de empleados" ></i>
-                            Recursos Humanos
-                        </div>
-                    </a>
-                </button>
-            </div>
-    
-            <!-- <div class="form-group row justify-content-md-center">
-                <button type="button" class="btn btn-success form-control col-sm-5">
-                    <a class="" href="recursos_humanos/supervision">    
-                        <div class="option">
-                            <i class="fa-solid fa-file-pen" title="Evaluacion de empleados"></i>
-                            Supervision
-                        </div>
-                    </a>
-                </button>
-            </div> -->
-        </div>
+       
 
     </div>
 </body>

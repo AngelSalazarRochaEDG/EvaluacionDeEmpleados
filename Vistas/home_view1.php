@@ -5,39 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Evaluación de empleados</title>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="./css/home_stiles.css?14">
+    <link rel="stylesheet" href="./css/home_stiles.css?15">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
-    <script tipe="text/javascript" src="./Controladores/title_controller.js?14022023"></script>
-    
+    <!-- <script tipe="text/javascript" src="./Controladores/title_controller.js?14022023"></script> -->
     <script src="https://kit.fontawesome.com/41bcea2ae3.js"></script>
 </head>
-<body id="body">
+<body id="body" onload="currentDay()">
 
     <!-- titulo y menu -->
     <div id="main-app" class="main-wrapper">
         <nav class="navbar navbar-light bg-light">
+            
+                <header class="col-md-2 col-4 row">
+                    <div class="icon__menu">
+                        <i class="fas fa-bars" id="btn_open"></i>
+                    </div>
+                </header>
+    
+                <!-- <a href="../recursos_humanos" class="col-md-2  text-reset text-uppercase d-flex align-items-center">
+                    <img src="./resources/logo nuevo.png" alt="Logo EDGroup" class="" >
+                </a> -->
+                <h4 class="col-8 col-sm-8 col-md-8 col-lg-8">ED Group & TFS Customs Brokers, Inc</h4>
+                
 
-            <header>
-                <div class="icon__menu">
-                    <i class="fas fa-bars" id="btn_open"></i>
-                </div>
-            </header>
-
-            <a href="#" class="col-md-3 text-reset text-uppercase d-flex align-items-center">
-                <img src="./resources/logo nuevo.png" alt="Logo EDGroup" class="img-logo mr-2 img-fluid" width="60px">
-                <a class="navbar-brand">ED Group</a>
-            </a>
-            <form class="form-inline">
-                <input class="form-control mr-sm-3" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </nav>
     </div>
 
@@ -52,19 +46,17 @@
         <!-- Opciones de menu -->
         <div class="options__menu container-fluid">
             <div class="form-group row">
-                <button type="button" class="btn btn-light form-control col-sm-12" onclick="VerHomeTitle();">
-                    <a class=""><!--  selected -->
-                        <div class="option">
-                            <i class="fas fa-home" title="Inicio"></i>
-                            Inicio
-                        </div>
-                    </a>
-                </button>
+                <a class="btn btn-light form-control col-sm-12" href="../"><!--  selected -->
+                    <div class="option">
+                        <i class="fas fa-home" title="Inicio"></i>
+                        Inicio
+                    </div>
+                </a>
             </div>
 
             <div class="form-group row">
-                <button type="button" class="btn btn-light form-control col-sm-12" onclick="VerEvaluacion();">
-                    <a class="">    
+                <button type="button" class="btn btn-light form-control col-sm-12">
+                    <a class="" href="recursos_humanos/evaluar">    
                         <div class="option">
                             <i class="fa-solid fa-users" title="Evaluacion de empleados"></i>
                             Recursos Humanos
@@ -74,7 +66,7 @@
             </div>
 
             <div class="form-group row">
-                <button type="button" class="btn btn-light form-control col-sm-12" onclick="VerSupervisor();">
+                <button type="button" class="btn btn-light form-control col-sm-12">
                     <a class="">    
                         <div class="option">
                             <i class="fa-solid fa-file-pen" title="Supervisor"></i>
@@ -88,11 +80,26 @@
 
     <!-- Contenedor principal -->
     <main>
-        <div class="container" >
-            
-            <!-- container que carga el contenido de las views. -->
-            <div class="container" id="contenido"></div>
-    
+        <div class="container col-10 col-sm-7 col-md-4 col-lg-3" id="contenido">
+            <div class="form-group row justify-content-center">
+                <h3>Human Resources</h3>
+            </div>
+
+            <div class="form-group row justify-content-center">
+                <h4>Recursos humanos</h3>
+            </div>
+            <div class="options__home">
+                <div class="form-group row justify-content-md-center">
+                    <button type="button" class="btn btn-success form-control">
+                        <a class="" href="recursos_humanos/evaluar">    
+                            <div class="option">
+                                <i class="fa-solid fa-users" title="Evaluacion de empleados" ></i>
+                                Recursos Humanos
+                            </div>
+                        </a>
+                    </button>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -106,7 +113,7 @@
                 <!-- Footer -->
                 <a href="#" class="col-3 text-reset text-uppercase d-flex align-items-center">
                     <div class="form-group">
-                        <img src="./resources/logo nuevo 2.png" alt="Logo EDGroup" class="img-logo mr-2 img-fluid" width="60px">
+                        <img src="./resources/logo nuevo 2.png" alt="Logo EDGroup" class="col-md-4" width="60px">
                         ED Group
                     </div>
                 </a>
