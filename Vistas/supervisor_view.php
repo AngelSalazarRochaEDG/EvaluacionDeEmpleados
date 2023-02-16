@@ -14,10 +14,10 @@
 </head>
 <body>
     <?php
-        require_once("../config/conexion.php");
-        // Esto vendria por parametros cuando sea llamado por un usuario de tipo empleado.
-        $consulta = "select `Nombre`, `Departamento`, `Puesto`, `Supervisor`, `Fecha_Contratacion` from `empleado`";
-        $resultado = mysqli_query($link, $consulta);
+        // require_once("../config/conexion.php");
+        // // Esto vendria por parametros cuando sea llamado por un usuario de tipo empleado.
+        // $consulta = "select `Nombre`, `Departamento`, `Puesto`, `Supervisor`, `Fecha_Contratacion` from `empleado`";
+        // $resultado = mysqli_query($link, $consulta);
     ?>
 
     

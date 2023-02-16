@@ -8,10 +8,10 @@
     <title>Evaluación de empleados</title>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/home_stiles.css?15">
+    <link rel="stylesheet" href="./css/home_stiles.css?16022023">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <!-- <script tipe="text/javascript" src="./Controladores/title_controller.js?14022023"></script> -->
+    <script tipe="text/javascript" src="./Controladores/title_controller.js?16022023"></script>
     <script src="https://kit.fontawesome.com/41bcea2ae3.js"></script>
 </head>
 <body id="body" onload="currentDay()">
@@ -30,80 +30,138 @@
                     <img src="./resources/logo nuevo.png" alt="Logo EDGroup" class="" >
                 </a> -->
                 <h4 class="col-8 col-sm-8 col-md-8 col-lg-8">ED Group & TFS Customs Brokers, Inc</h4>
-                
-
         </nav>
     </div>
 
-    
     <!-- Titulo de menu principal -->
     <div class="menu__side" id="menu_side">
         <div class="name__page">
-            <i class="fas fa-home" title="Inicio"></i>
-            <h4>ED Group</h4>
+            <a href="../">
+                <i class="fas fa-home " title="Inicio"></i>
+            </a>
+            <a href="../">
+                <h4 class="">ED Group</h4>
+            </a>
         </div>
 
         <!-- Opciones de menu -->
         <div class="options__menu container-fluid">
             <div class="form-group row">
-                <a class="btn btn-light form-control col-sm-12" href="../"><!--  selected -->
+                <a class="btn btn-light form-control col-sm-12" href="./"><!--  selected -->
                     <div class="option">
-                        <i class="fas fa-home" title="Inicio"></i>
-                        Inicio
+                        <i class="fa-solid fa-reply" title="Inicio"></i>
+                        Regresar
                     </div>
                 </a>
             </div>
 
             <div class="form-group row">
-                <button type="button" class="btn btn-light form-control col-sm-12">
-                    <a class="" href="recursos_humanos/evaluar">    
-                        <div class="option">
-                            <i class="fa-solid fa-users" title="Evaluacion de empleados"></i>
-                            Recursos Humanos
-                        </div>
-                    </a>
-                </button>
+                <a class="btn btn-light form-control col-sm-12" href="">    
+                    <div class="option">
+                        <i class="fa-solid fa-users" title="Evaluacion de empleados"></i>
+                        Recursos Humanos
+                    </div>
+                </a>
             </div>
 
-            <div class="form-group row">
-                <button type="button" class="btn btn-light form-control col-sm-12">
-                    <a class="">    
-                        <div class="option">
-                            <i class="fa-solid fa-file-pen" title="Supervisor"></i>
-                            Otras Cosas
-                        </div>
-                    </a>
-                </button>
-            </div>
         </div>
     </div>
 
     <!-- Contenedor principal -->
     <main>
-        <div class="container col-10 col-sm-7 col-md-4 col-lg-3" id="contenido">
+        <div class="container col-12 col-sm-10 col-md-9 col-lg-4" id="contenido">
+            
             <div class="form-group row justify-content-center">
-                <h3>Human Resources</h3>
+                <h3>
+                    <span id="currentDay"></span>
+                </h3>
             </div>
 
             <div class="form-group row justify-content-center">
                 <h4>Recursos humanos</h3>
             </div>
+
             <div class="options__home">
                 <div class="form-group row justify-content-md-center">
-                    <button type="button" class="btn btn-success form-control">
-                        <a class="" href="recursos_humanos/evaluar">    
-                            <div class="option">
-                                <i class="fa-solid fa-users" title="Evaluacion de empleados" ></i>
-                                Recursos Humanos
-                            </div>
-                        </a>
-                    </button>
+                    <a class="btn btn-success form-control" href="recursos_humanos/evaluar">    
+                        <div class="option">
+                            <i class="fa-solid fa-users" title="Evaluacion de empleados" ></i>
+                            Proceso General
+                        </div>
+                    </a>
                 </div>
             </div>
+
+            <div class="options__home">
+                <div class="form-group row justify-content-md-center">
+                    <a class="btn btn-success form-control" href="recursos_humanos/evaluar">    
+                        <div class="option">
+                            <i class="fa-solid fa-users" title="Evaluacion de empleados" ></i>
+                            Carta Poder (Power of Attorney)
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="options__home">
+                <div class="form-group row justify-content-md-center">
+                    <a class="btn btn-success form-control" href="recursos_humanos/evaluar">    
+                        <div class="option">
+                            <i class="fa-solid fa-users" title="Evaluacion de empleados" ></i>
+                            Consultar Importador (Query importer)
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="options__home">
+                <div class="form-group row justify-content-md-center">
+                    <a class="btn btn-success form-control" href="recursos_humanos/evaluar">    
+                        <div class="option">
+                            <i class="fa-solid fa-users" title="Evaluacion de empleados" ></i>
+                            Forma 5106 Alta o Cambios de Importador
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="options__home">
+                <div class="form-group row justify-content-md-center">
+                    <a class="btn btn-success form-control" href="recursos_humanos/evaluar">    
+                        <div class="option">
+                            <i class="fa-solid fa-users" title="Evaluacion de empleados" ></i>
+                            Fianza Sencilla (Single Entry Bond)
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="options__home">
+                <div class="form-group row justify-content-md-center">
+                    <a class="btn btn-success form-control" href="recursos_humanos/evaluar">    
+                        <div class="option">
+                            <i class="fa-solid fa-users" title="Evaluacion de empleados" ></i>
+                            C-TPAT
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="options__home">
+                <div class="form-group row justify-content-md-center">
+                    <a class="btn btn-success form-control" href="recursos_humanos/evaluar">    
+                        <div class="option">
+                            <i class="fa-solid fa-users" title="Evaluacion de empleados" ></i>
+                            Evaluación Empleados
+                        </div>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </main>
 
-
+    
     <!-- Footer -->
     <br>
     <footer class="bg-dark text-white py-4 footer">

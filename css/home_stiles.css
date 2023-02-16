@@ -102,11 +102,14 @@ nav img {
 
 .name__page h4 {
     min-width: 200px;
+    color: #fff;
 }
 
 .name__page i{
-    width: 80px;
-    margin-right: 30px;
+    width: 60px;
+    height: 30px;
+    margin-right: 0px;
+    color: #fff;
 }
 
 .options__menu{
@@ -136,7 +139,7 @@ nav img {
 
 .options__menu .option i{
     width: 20px;
-    margin-right: 30px;
+    margin-right: 50px;
     cursor: pointer;
 }
 
@@ -181,3 +184,11 @@ a.selected{
     }
 }
 
+
+#home {
+    background-color: transparent;
+}
+
+#contenido {
+    margin-top: 30px;
+}

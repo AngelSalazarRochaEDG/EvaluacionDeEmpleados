@@ -9,7 +9,7 @@
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
-    <link rel="stylesheet" href="../css/home_stiles.css?15">
+    <link rel="stylesheet" href="../css/home_stiles.css?16">
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
@@ -38,16 +38,20 @@
                     <img src="../resources/logo nuevo.png" alt="Logo EDGroup" class="" >
                 </a>
                 <h4 class="col-md-3">ED Group - Evaluacion</h4>
-                <h4 class="col-md-3">Welcome!</h4>
 
         </nav>
     </div>
     
     <!-- Titulo de menu principal -->
     <div class="menu__side" id="menu_side">
+        
         <div class="name__page">
-            <i class="fas fa-home" title="Inicio"></i>
-            <h4>ED Group</h4>
+            <a href="../">
+                <i class="fas fa-home " title="Inicio"></i>
+            </a>
+            <a href="../">
+                <h4 class="">ED Group</h4>
+            </a>
         </div>
 
         <!-- Opciones de menu -->
