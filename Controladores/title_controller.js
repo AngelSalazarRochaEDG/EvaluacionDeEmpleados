@@ -1,4 +1,3 @@
-
 //Current day al cargar pagina
 function currentDay() {
     var date = new Date();
@@ -12,27 +11,6 @@ function currentDay() {
 
     document.getElementById("currentDay").innerHTML = day;
 }
-
-
-//Al arranque mostrar home
-// (function(){
-//     //tiempo de espera
-//     var wait = 500;
-//     $.ajax({
-//         //pagina por cargar
-//         url: "Vistas/home_view.php",
-//         beforeSend : function() {
-//             //divider donde se cargará el contenido
-//             $('#contenido').text('Cargando Inicio...');
-//         },
-//         success : function(data) {
-//             setTimeout(function() {
-//                 $('#contenido').html(data);
-//             }, wait
-//             );
-//         }
-//     })
-// })();
 
 // Vista de home de nuevo pero con boton
 function VerEvaluar() {
@@ -60,10 +38,10 @@ function VerEvaluaciones() {
     var wait = 500;
     $.ajax({
         //pagina por cargar
-        url: "Vistas/evaluaciones_view.php",
+        url: "../recursos_humanos/evaluaciones",
         beforeSend : function() {
             //divider donde se cargará el contenido
-            $('#contenido').text('Cargando Test...');
+            $('#contenido').text('Cargando Evaluaciones...');
         },
         success : function(data) {
             setTimeout(function() {
@@ -79,7 +57,7 @@ function VerSupervisor() {
     var wait = 500;
     $.ajax({
 
-        url: "Vistas/supervisor_view.php",
+        url: "../recursos_humanos/supervision",
         beforeSend : function() {
             
             $('#contenido').text('Cargando Supervision...');

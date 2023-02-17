@@ -8,7 +8,7 @@
     <title>Evaluación de empleados</title>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/home_stiles.css?16022023">
+    <link rel="stylesheet" href="./css/home_stiles.css?17022023">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script tipe="text/javascript" src="./Controladores/title_controller.js?16022023"></script>

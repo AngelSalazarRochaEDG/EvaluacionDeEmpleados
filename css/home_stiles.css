@@ -33,14 +33,14 @@ nav {
     color:#212529;
 }
 
-@media screen and (max-width: 570px) {
+/* @media screen and (max-width: 570px) {
     nav {
         background-color: white;
     }
     nav h4 {
         font-size: small;
     }
-}
+} */
 
 nav img {
     width: 140px;
@@ -190,5 +190,9 @@ a.selected{
 }
 
 #contenido {
+    margin-top: 30px;
+}
+
+#titulo {
     margin-top: 30px;
 }

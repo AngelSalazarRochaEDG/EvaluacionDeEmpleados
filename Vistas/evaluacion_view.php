@@ -9,7 +9,7 @@
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
-    <link rel="stylesheet" href="../css/home_stiles.css?16">
+    <link rel="stylesheet" href="../css/home_stiles.css?17022023A">
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script tipe="text/javascript" src="../Controladores/title_controller.js?17022023"></script>
@@ -21,18 +21,13 @@
     <!-- titulo y menu -->
     <div id="main-app" class="main-wrapper">
         <nav class="navbar navbar-light bg-light">
-            
-                <header class="col-md-1">
-                    <div class="icon__menu">
-                        <i class="fas fa-bars" id="btn_open"></i>
-                    </div>
-                </header>
-    
-                <a href="../recursos_humanos" class="col-md-2  text-reset text-uppercase d-flex align-items-center">
-                    <img src="../resources/logo nuevo.png" alt="Logo EDGroup" class="" >
-                </a>
-                <h4 class="col-md-3">ED Group - Evaluacion</h4>
+            <header class="col-md-2 col-4 row">
+                <div class="icon__menu">
+                    <i class="fas fa-bars" id="btn_open"></i>
+                </div>
+            </header>
 
+            <h4 class="col-8 col-sm-8 col-md-8 col-lg-8">ED Group & TFS Customs Brokers, Inc</h4>
         </nav>
     </div>
     
@@ -69,35 +64,35 @@
             </div>
 
             <div class="form-group row">
-                <a class="btn btn-light form-control col-sm-12" href="evaluaciones">    
+                <button type="button" class="btn btn-light form-control col-sm-12" onclick="VerEvaluaciones();">    
                     <div class="option">
                         <i class="fa-solid fa-file" title="Evaluacion de empleados"></i>
                         Evaluaciones previas
                     </div>
-                </a>
+                </button>
             </div>
 
             <div class="form-group row">
-                <a class="btn btn-light form-control col-sm-12" href="supervision">    
+                <button class="btn btn-light form-control col-sm-12" onclick="VerSupervisor();">    
                     <div class="option">
                         <i class="fa-solid fa-file-pen" title="Supervisor"></i>
                         Supervision
                     </div>
-                </a>
+                </button>
             </div>
         </div>
     </div>
 
-    <div class="form-group row justify-content-center">
-        <h3>
+    <!-- Contenedor de cuerpo -->
+    <div class="container" >
+        <h3 class="row justify-content-center" id="titulo">
             <span id="currentDay"></span>
         </h3>
+        <!-- container que carga el contenido de las views. -->
+        <div class="container" id="contenido">
+        </div>
     </div>
 
-    <!-- Contenedor de subvistas -->
-    <div class="container" id="contenido">
-
-    </div>
 
     <!-- Pie de pagina -->
     <footer class="bg-dark text-white py-4 footer">

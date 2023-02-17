@@ -9,7 +9,7 @@
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
-    <link rel="stylesheet" href="../css/home_stiles.css?16">
+    <link rel="stylesheet" href="../css/home_stiles.css?17022023">
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
@@ -25,7 +25,7 @@
     ?>
 
     <!-- Cuerpo de evaluar -->
-    <div class="container col-md-11">
+    <div class="container col-md-11 justify-content-center">
         <div class="row">
             <div class="col-md-12 col-sm-10 col-lg-12">
                 <br>
