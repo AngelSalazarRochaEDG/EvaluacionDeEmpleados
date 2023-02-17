@@ -6,3 +6,4 @@ RewriteRule ^recursos_humanos$  Vistas/home_view1.php
 RewriteRule ^recursos_humanos/evaluar$ Vistas/evaluacion_view.php
 RewriteRule ^recursos_humanos/supervision$ Vistas/supervisor_view.php
 RewriteRule ^recursos_humanos/evaluaciones$ Vistas/evaluaciones_view.php
+RewriteRule ^recursos_humanos/evaluacion$ Vistas/evaluacion_evaluar.php

@@ -1,7 +1,7 @@
 <?php
 
-    // echo "<script> alert('Entrando a guardar los datos');
-    // </script>;";
+    echo "<script> alert('Entrando a guardar los datos');
+    </script>;";
 
     //Guardar la evaluacion
     $fecha_evaluacion = date('m/d/Y');
@@ -124,8 +124,7 @@
         </script>");
     } else {
         echo ("<script> alert('Correcto en actualizar evaluación');
-            window.location = '../index.php'
+            window.location = '../recursos_humanos/evaluar'
         </script>");
-        //header('location: evaluacion');
     }
 ?>

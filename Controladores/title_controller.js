@@ -35,15 +35,15 @@ function currentDay() {
 // })();
 
 // Vista de home de nuevo pero con boton
-function VerHomeTitle() {
+function VerEvaluar() {
     //tiempo de espera
     var wait = 500;
     $.ajax({
         //pagina por cargar
-        url: "Vistas/home_view.php",
+        url: "../recursos_humanos/evaluacion",
         beforeSend : function() {
             //divider donde se cargará el contenido
-            $('#contenido').text('Cargando Inicio...');
+            $('#contenido').text('Cargando Evaluación...');
         },
         success : function(data) {
             setTimeout(function() {
@@ -55,12 +55,12 @@ function VerHomeTitle() {
 }
 
 // Vista de evaluación...
-function VerEvaluacion() {
+function VerEvaluaciones() {
     //tiempo de espera
     var wait = 500;
     $.ajax({
         //pagina por cargar
-        url: "Vistas/evaluacion_view.php",
+        url: "Vistas/evaluaciones_view.php",
         beforeSend : function() {
             //divider donde se cargará el contenido
             $('#contenido').text('Cargando Test...');
