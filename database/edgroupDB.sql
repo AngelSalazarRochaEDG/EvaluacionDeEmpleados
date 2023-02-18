@@ -1,5 +1,5 @@
 create database if not exists EDGroup;
-use edgroupM;
+use edgroup;
 create table if not exists Empleado (
     clave varchar(10) not null,
 	nombre varchar(50),
@@ -39,15 +39,15 @@ create table if not exists Respuesta (
 
 create table if not exists users
 (
-    id int AUTO_INCREMENT,
-    email varchar(30) not null,
-    `password` varchar(100) not null,
-    ip varchar(20) not null,
-    created_at datetime not null,
-    updated_at datetime not null,
-    validated char(5),
+    id int(11) AUTO_INCREMENT,
+    email varchar(100) not null,
+    `password` varchar(255) not null,
+    ip varchar(20),
+    created_at datetime,
+    updated_at datetime,
+    validated varchar(5),
     token varchar(255),
-    fname varchar(25),
+    fname varchar(15),
 
     constraint `pk_user` primary key (id)
 );
