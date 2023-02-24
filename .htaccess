@@ -1,5 +1,5 @@
 ## Reajustes de indice
-DirectoryIndex Vistas/home_title.php
+DirectoryIndex Vistas/home_view1.php
 
 RewriteEngine On
 RewriteRule ^recursos_humanos$  Vistas/home_view1.php

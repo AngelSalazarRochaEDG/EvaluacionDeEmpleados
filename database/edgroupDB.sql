@@ -1,15 +1,5 @@
 create database if not exists EDGroup;
 use edgroup;
-create table if not exists Empleado (
-    clave varchar(10) not null,
-	nombre varchar(50),
-    departamento varchar(30),
-    puesto varchar(25),
-    supervisor varchar(50),
-    fecha_contratacion date,
-
-    constraint `pk_empleado` primary key(Clave)
-);
 
 create table if not exists Evaluacion (
     id_evaluacion int AUTO_INCREMENT,
@@ -51,3 +41,21 @@ create table if not exists users
 
     constraint `pk_user` primary key (id)
 );
+
+create table if not exists Empleado (
+    clave varchar(10) not null,
+    departamento varchar(30),
+    puesto varchar(25),
+    supervisor varchar(50),
+    fecha_contratacion date,
+
+    constraint `fk_employee_users` foreign key(Clave) references users (id)
+);
+
+delimiter //
+CREATE TRIGGER newEmployee AFTER INSERT ON USERS
+FOR EACH ROW
+BEGIN
+    INSERT INTO Empleado set clave = NEW.id;
+END // 
+delimiter ;
